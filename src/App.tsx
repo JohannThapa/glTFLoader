@@ -1,23 +1,21 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
-  Link,
-  BrowserRouter
 } from "react-router-dom";
 import './App.css';
-import ThreeFiberTabs from './components/threeFiber';
-import Applayout from './layout/mainLayout/header';
+import GltfLoaderFiber from './components/threeFiber/gltfLoader';
+import GltfViewer from './components/threeJs/gltfLoader';
 
 function App() {
   return (
     <BrowserRouter>
-   <Routes>
-        <Route path="/" element={<Applayout><ThreeFiberTabs /> </Applayout>} />
-        {/* <Route path="users/*" element={<Users />} /> */}
+      <Routes>
+        <Route path="/" element={<GltfLoaderFiber />} />
+        <Route path="threejs/*" element={<GltfViewer />} />
       </Routes>
-  </BrowserRouter>
+    </BrowserRouter>
   );
 }
 

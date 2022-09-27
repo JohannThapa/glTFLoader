@@ -34,6 +34,7 @@ export default function Applayout(props: Props) {
   };
 
   const drawer = (
+    //@ts-ignore
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
         ThreeJs
