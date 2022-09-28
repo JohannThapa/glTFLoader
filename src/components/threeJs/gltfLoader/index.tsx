@@ -1,17 +1,28 @@
-import { Component } from 'react';
+import { Component, Suspense } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls, Stats } from "@react-three/drei";
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import Stats from 'three/examples/jsm/libs/stats.module';
 
 import myGLTF from "../models/scene.json";
+import { Canvas } from '@react-three/fiber';
+import Plane from './components/model';
 const stringGLTF = JSON.stringify(myGLTF) // convert Object to a String
 const base64EncodedGLTF = btoa(stringGLTF) // Base64 encode the String
 
 //First part is: 'data:application/octet-stream;base64,'
 const resultingDataURI = `data:application/octet-stream;base64,${base64EncodedGLTF}`;
 
-export default class GltfViewer extends Component {
+const GltfLoaderCore = () => (
+    <Canvas style={{ height: 400, width: 800 }}>
+    <pointLight position={[5, 5, 5]} />
+    <Suspense fallback={null}>
+      <Plane rotation={[0, Math.PI * 1.25, 0]} />
+    </Suspense>
+    <OrbitControls />
+    <Stats />
+  </Canvas>
+)
+ class GltfViewer extends Component {
     scene: THREE.Scene  = new THREE.Scene();
     renderer!: THREE.WebGLRenderer;
     mount: any;
@@ -79,6 +90,7 @@ loader.load(
 
         //Settings
         //Add Camera Controls
+        //@ts-ignore
         const controls = new OrbitControls(this.camera, this.renderer.domElement);
         controls.update();
 
@@ -149,3 +161,5 @@ loader.load(
         );
     }
 }
+
+export default GltfLoaderCore;

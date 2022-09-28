@@ -2,6 +2,9 @@
 import React, { useLayoutEffect }from 'react';
 import { useGLTF } from '@react-three/drei';
 import myGLTF from "../models/submarine.json";
+import testGLTF from "../models/test.json";
+//@ts-ignore
+import test1GLTF from "../models/test2.gltf";
 const stringGLTF = JSON.stringify(myGLTF) // convert Object to a String
 const base64EncodedGLTF = btoa(stringGLTF) // Base64 encode the String
 

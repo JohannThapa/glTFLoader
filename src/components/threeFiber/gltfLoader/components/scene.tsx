@@ -40,7 +40,8 @@ export const Scene = ({currentColor, currentTexture, upKeyPressed}: SceneProps) 
         roughnessMap={roughnessMap}
         metalnessMap={metalnessMap} 
         currentColor={currentColor}
-        currentTexture={currentTexture} />
+        currentTexture={currentTexture}
+         />
     </mesh>
     }
     

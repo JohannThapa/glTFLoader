@@ -69,7 +69,9 @@ const GltfLoaderFiber = () => {
       <div className="ribbon">
         <div className="ribbon-text">
       
-        <Link to="threejs">  Go to Pure Three.js</Link>
+        <Link to="threejs">glTF Viewer1</Link>
+        <br/>
+        <Link to="core">glTF Viewer2</Link>
         </div>
       </div>
     </div>
