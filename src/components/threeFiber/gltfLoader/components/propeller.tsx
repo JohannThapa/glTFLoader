@@ -4,8 +4,6 @@ import { useGLTF } from '@react-three/drei';
 import myGLTF from "../models/propeller.json";
 //@ts-ignore
 import PropellerGltf from '../models/propeller.gltf';
-//@ts-ignore
-import Test from '../models/test3.gltf';
 const stringGLTF = JSON.stringify(myGLTF) // convert Object to a String
 const base64EncodedGLTF = btoa(stringGLTF) // Base64 encode the String
 const resultingDataURI = `data:application/octet-stream;base64,${base64EncodedGLTF}`;
