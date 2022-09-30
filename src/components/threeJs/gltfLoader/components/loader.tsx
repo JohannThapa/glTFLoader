@@ -16,7 +16,7 @@ function Loader() {
 }
 
 const Model = () => {
-  const gltf = useLoader(GLTFLoader, "./test1.gltf");
+  const gltf = useLoader(GLTFLoader, "./small-airplane-v3.gltf");
   return <primitive object={gltf.scene} scale={0.4} />;
 };
 
